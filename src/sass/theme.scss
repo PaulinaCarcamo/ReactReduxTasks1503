@@ -1,0 +1,40 @@
+$primary: #00786D;
+$secondary: #47A676;
+$success: #8AD576;
+$danger: #69384A;
+$light: #ffff;
+$dark: #1A3925;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  // "info": teal,
+  // "warning": tomato,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+$display-font-sizes: (
+  1: 4rem,
+  2: 3.5rem,
+  3: 3rem,
+  4: 2.5rem,
+  5: 2rem,
+  6: 1.5rem
+);
+
+$display-font-weight: 600;
+
+$bg: #0F2027;
+$bg-wk: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);
+$bg-gd: linear-gradient(to left, #2C5364, #203A43, #0F2027);
+
+body {
+  background: $bg;
+  background: $bg-wk;
+  background: $bg-gd;
+}
+   
+@import "~bootstrap/scss/bootstrap";

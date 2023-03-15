@@ -8,7 +8,7 @@ const CompletedTodo = () => {
 
     return (
         <div className="container">
-            <h4>Completed tasks: {todos.length}</h4>
+            <h4 className="text-light">Completed tasks: {todos.length}</h4>
         </div>
     );
 };

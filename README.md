@@ -1,1 +1,1 @@
-React TODO app with Redux
+React TODO APP + Redux + API

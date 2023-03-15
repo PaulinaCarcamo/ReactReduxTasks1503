@@ -1,43 +1,52 @@
-import React from 'react';
+
 import { useDispatch } from 'react-redux';
-import { toggleComplete, deleteTodo } from '../redux/slice';
+import { toggleComplete, deleteTodo, updateTodos } from '../redux/slice';
+import { PencilFill, TrashFill } from 'react-bootstrap-icons';
 
-// const TodoItem = ({ id, title, completed }) => {
 const TodoItem = ({ id, todo, completed }) => {
-
     const dispatch = useDispatch();
 
-    const handleCheckboxClick = () => {
+    const handleCheckbox = () => {
         dispatch(toggleComplete({ id, completed: !completed }));
     };
 
-    const handleDeleteClick = () => {
+    const handleDelete = () => {
         dispatch(deleteTodo({ id }));
     };
 
     return (
+        <div>
+            <li className={` list-group-item list-group-item-action rounded-1 mt-2 
+            ${completed && 'list-group-item-success'}`}
+            >
+                <div className=" d-flex justify-content-between py-1">
+                    <span className=" d-flex align-items-center">
+                        <input
+                            type="checkbox"
+                            className="form-check-input me-2 my-auto"
+                            onClick={handleCheckbox}
+                            checked={completed}
+                        />
+                        <label className="form-check-label ">
+                            {todo}
+                        </label>
+                    </span>
 
-        <li className={`list-group-item list-group-item-action rounded-1 mt-2 ${completed && 'list-group-item-success'}`}
-        >
-            <div className="d-flex justify-content-between ">
-                <span className="d-flex align-items-center ">
-                    <input
-                        type="checkbox"
-                        className="form-check-input me-2 my-auto  "
-                        onClick={handleCheckboxClick}
-                        checked={completed}
-                
-                    />
-                    <label className="form-check-label">
-                        {/* {title} */}
-                        {todo}
-                    </label>
-                </span>
-                <button onClick={handleDeleteClick} className="btn btn-danger">
-                    Delete
-                </button>
-            </div>
-        </li>
+                    <span>
+                        <button onClick={handleDelete}
+                            className="bg-transparent border-0 text-dark">
+                            {/* Delete */}
+                            <TrashFill />
+                        </button>
+
+                        <button className="bg-transparent border-0 text-dark">
+                            {/* Update */}
+                            <PencilFill />
+                        </button>
+                    </span>
+                </div>
+            </li>
+        </div>
 
     );
 };

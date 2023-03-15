@@ -13,12 +13,12 @@ const TodoForm = () => {
 
     return (
         <div className="container">
+
             {todos.length === 0
-                ? <div><h5>Looks like you&apos;re absolutely free today!</h5></div>
+                ? <div><h5 className="text-light">Looks like you&apos;re absolutely free today!</h5></div>
                 :
-                <ul className="list-group bg-secondary p-5">
+                <ul className="list-group">
                     {todos.map((todo) => (
-                        // <TodoItem id={todo.id} title={todo.title} completed={todo.completed} />
                         <TodoItem id={todo.id} todo={todo.todo} completed={todo.completed} />
                     ))}
                 </ul>

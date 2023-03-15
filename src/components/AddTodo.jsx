@@ -2,58 +2,45 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/slice';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const AddTodo = () => {
     const [value, setValue] = useState('');
+    const [state, setState] = useState({});
     const dispatch = useDispatch();
+
+    const notify = () => toast("Please write something");
 
     const onSubmit = (event) => {
         event.preventDefault();
-        if (value) {
-            dispatch(
-                addTodo({
-                    // title: value,
-                    todo: value,
-                })
-            );
+        if (value === "") {
+            setState({ ...state })
+            // return alert("Write something!");
+            return notify()
         }
+        dispatch(addTodo({ todo: value }));
     };
 
     return (
         <div className="container">
-            <h4 className="text-primary text-center">WHAT NEEDS TO BE DONE?</h4>
-            <br />
-            <form onSubmit={onSubmit}>
-                {/* <div className="col-sm" > */}
-                {/* <label className="sr-only">Add todo</label> */}
-                {/* <input
-                        type="text"
-                        className="form-control py-2"
-                        placeholder="Write something to do here..."
-                        value={value}
-                        onChange={(event) => setValue(event.target.value)}
-                    >
-                    </input>
-                </div>
-                <div className="col-sm my-auto" >
-                    <button type="submit" className="btn btn-primary ">
-                        Submit
-                    </button>
-                </div> */}
 
+            <h6 className="display-6 text-light text-center">WHAT NEEDS TO BE DONE?</h6>
+            <form onSubmit={onSubmit}>
                 <div className="input-group">
                     <input
                         type="text"
-                        className="form-control"
-                        // placeholder="Recipient's username"
-                        // aria-label="Recipient's username"
-                        // aria-describedby="button-addon2" 
-
+                        className="form-control py-3"
                         placeholder="Write something to do here..."
                         value={value}
                         onChange={(event) => setValue(event.target.value)}
                     />
-                    <button className="btn btn-secondary" type="submit" id="button-addon2">Button</button>
+                    <button className="btn btn-secondary px-4" type="submit">
+                        <span className="fw-bold">ADD</span>
+                    </button>
                 </div>
+                {/* <button onClick={notify}>Notify!</button> */}
+                <ToastContainer />
             </form>
         </div>
     );

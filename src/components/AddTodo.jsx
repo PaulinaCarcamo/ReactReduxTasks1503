@@ -4,6 +4,7 @@ import { addTodo } from '../redux/slice';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Clipboard2PlusFill } from 'react-bootstrap-icons';
 
 const AddTodo = () => {
     const [value, setValue] = useState('');
@@ -35,8 +36,8 @@ const AddTodo = () => {
                         value={value}
                         onChange={(event) => setValue(event.target.value)}
                     />
-                    <button className="btn btn-primary px-4 border-0" type="submit">
-                        <span className="fw-bold text-light">ADD</span>
+                    <button className="btn btn-primary border-0 px-4" type="submit">
+                        <span className="fw-bold text-light d-flex align-items-center">Add <Clipboard2PlusFill className="ms-2" /> </span>
                     </button>
                 </div>
                 {/* <button onClick={notify}>Notify!</button> */}

@@ -21,12 +21,14 @@ const AddTodo = () => {
             return notify()
         }
         dispatch(addTodo({ todo: value }));
+        setValue("")
     };
 
     return (
         <div className="container">
 
-            <h6 className="display-6 text-light text-center ">WHAT NEEDS TO BE DONE?</h6>
+            <h6 className="display-2 text-light text-center">What needs to be done?</h6>
+            <br />
             <form onSubmit={onSubmit}>
                 <div className="input-group ">
                     <input
@@ -37,7 +39,9 @@ const AddTodo = () => {
                         onChange={(event) => setValue(event.target.value)}
                     />
                     <button className="btn btn-primary border-0 px-4" type="submit">
-                        <span className="fw-bold text-light d-flex align-items-center">Add <Clipboard2PlusFill className="ms-2" /> </span>
+                        <span className="display-4 fw-bold text-light d-flex align-items-center">
+                            Add <Clipboard2PlusFill className="ms-2" />
+                        </span>
                     </button>
                 </div>
                 {/* <button onClick={notify}>Notify!</button> */}

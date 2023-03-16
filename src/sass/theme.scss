@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+$Raleway: 'Raleway', sans-serif;
+
 $primary: #00786D;
-$secondary: #47A676;
 $secondary: #E6F4F1;
 $success: #D1FAE9;
 $danger: #69384A;
@@ -17,27 +20,50 @@ $theme-colors: (
   "dark": $dark
 );
 
-$display-font-sizes: (
-  1: 4rem,
-  2: 3.5rem,
-  3: 3rem,
-  4: 2.5rem,
-  5: 2rem,
-  6: 1.5rem
-);
-
 $display-font-weight: 600;
-
-
+$display-font-sizes: (
+  1: 2.5rem,
+  2: 2rem,
+  3: 1.5rem,
+  4: 1rem,
+  5: .5rem,
+  // 6: .5rem
+);
 
 $bg: #0F2027;
 $bg-wk: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);
 $bg-gd: linear-gradient(to left, #2C5364, #203A43, #0F2027);
 
+$primary-btn: #aa4b6b;
+$primary-btn-wk: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+$primary-btn-gd: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+
+$secondary-btn: #3a6186;
+$secondary-btn-wk: -webkit-linear-gradient(to right, #89253e, #3a6186);
+$secondary-btn-gd: linear-gradient(to right, #89253e, #3a6186);
+
 body {
   background: $bg;
   background: $bg-wk;
   background: $bg-gd;
+}
+
+.display-4,
+.display-3,
+.display-2 {
+  font-family: $Raleway;
+}
+
+.btn-primary {
+  background: $primary-btn;
+  background: $primary-btn-wk;
+  background: $primary-btn-gd;
+}
+
+.btn-secondary {
+  background: $secondary-btn;
+  background: $secondary-btn-wk;
+  background: $secondary-btn-gd;
 }
 
 @import "~bootstrap/scss/bootstrap";

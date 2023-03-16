@@ -10,9 +10,26 @@ const CompletedTodo = () => {
 
     return (
         <div className="container">
-            <h4 className="text-light">
-                You have completed {completedtodos.length} tasks out of {alltodos.length}
-            </h4>
+            {alltodos.length === 0
+                ? null
+                :
+                <div>
+                    {completedtodos.length === 1
+                        ?
+                        <div>
+                            <h5 className="display-3 text-light">
+                                You have completed <span className="font-gd">{completedtodos.length}</span> task out of <span>{alltodos.length}</span>
+                            </h5>
+                        </div>
+                        :
+                        <div>
+                            <h5 className="display-3 text-light">
+                                You have completed <span className="font-gd">{completedtodos.length}</span> tasks out of <span>{alltodos.length}</span>
+                            </h5>
+                        </div>
+                    }
+                </div>
+            }
         </div>
     );
 };

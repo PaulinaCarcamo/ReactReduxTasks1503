@@ -64,7 +64,7 @@ const TodoItem = ({ id, todo, completed }) => {
                         </label>
                     </span>
                     <button className="btn btn-secondary border-0 px-3" onClick={handleDelete}>
-                        <span className="fw-bold text-light d-flex align-items-center">
+                        <span className="display-4 fw-bold text-light d-flex align-items-center">
                             Delete 
                             <TrashFill className="ms-2"/>
                             </span>

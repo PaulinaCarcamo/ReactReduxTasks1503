@@ -2,6 +2,10 @@ import React, { useEffect } from 'react';
 import TodoItem from './TodoItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTodosAsync } from '../redux/slice';
+import { Check2Circle, ListCheck } from 'react-bootstrap-icons';
+// import { images } from '../assets/images';
+
+// const welldone = images[0].img
 
 const TodoForm = () => {
     const dispatch = useDispatch();
@@ -15,7 +19,11 @@ const TodoForm = () => {
         <div className="container">
 
             {todos.length === 0
-                ? <div><h5 className="text-light">Looks like you&apos;re absolutely free today!</h5></div>
+                ?
+                <div>
+                    <h5 className="text-light">All done! <Check2Circle /> </h5>
+                    {/* <img src={welldone} height="200"></img> */}
+                </div>
                 :
                 <ul className="list-group">
                     {todos.map((todo) => (

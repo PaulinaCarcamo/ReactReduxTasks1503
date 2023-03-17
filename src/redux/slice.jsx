@@ -1,18 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-export const getTodosAsync = createAsyncThunk(
-    'todos/getTodosAsync',
-    async () => {
-        const resp = await fetch('https://dummyjson.com/todos?limit=10&skip=5')
-        // const resp = await fetch('https://jsonplaceholder.typicode.com/todos')
-        if (resp.ok) {
-            const todos = await resp.json();
-            const limitTodos = todos.todos;
-            return { limitTodos };
-            // return { todos };
-        }
-    }
-);
+// export const getTodosAsync = createAsyncThunk(
+//     'todos/getTodosAsync',
+//     async () => {
+//         const resp = await fetch('https://dummyjson.com/todos?limit=10&skip=5')
+//         // const resp = await fetch('https://jsonplaceholder.typicode.com/todos')
+//         if (resp.ok) {
+//             const todos = await resp.json();
+//             const limitTodos = todos.todos;
+//             return { limitTodos };
+//             // return { todos };
+//         }
+//     }
+// );
 
 export const todoSlice = createSlice({
     name: 'todos',
@@ -35,12 +35,12 @@ export const todoSlice = createSlice({
             return state.filter((todo) => todo.id !== action.payload.id);
         },
     },
-    extraReducers: {
-        [getTodosAsync.fulfilled]: (state, action) => {
-            // return action.payload.todos;
-            return action.payload.limitTodos;
-        },
-    },
+    // extraReducers:  {
+    //     [getTodosAsync.fulfilled]: (state, action) => {
+    //         // return action.payload.todos;
+    //         return action.payload.limitTodos;
+    //     },
+    // },
 });
 
 export const { addTodo, toggleComplete, deleteTodo } = todoSlice.actions;

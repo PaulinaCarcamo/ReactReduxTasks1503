@@ -26,7 +26,7 @@ const TodoItem = ({ id, todo, completed }) => {
                         />
                         <label className="form-check-label" >
                             {todo}
-                        </label>
+                        </label>                        
                     </div>
 
                     <div className="col-2 d-flex justify-content-end px-0 ">

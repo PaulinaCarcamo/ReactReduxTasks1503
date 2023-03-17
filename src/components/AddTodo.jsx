@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addTodo } from '../redux/slice';
-
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
 import { Clipboard2PlusFill } from 'react-bootstrap-icons';
+import { addTodo } from '../redux/slice';
 
 const AddTodo = () => {
     const [value, setValue] = useState('');
@@ -25,7 +24,7 @@ const AddTodo = () => {
     };
 
     return (
-        <div className="container px-sm-5 ">
+        <div className="container px-sm-5">
 
             <h6 className="display-2 text-light text-center">What needs to be done?</h6>
             <br />

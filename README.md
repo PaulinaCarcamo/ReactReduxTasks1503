@@ -1,1 +1,1 @@
-React TODO APP + Redux + API
+React TODO APP + Redux Thunks

@@ -18,13 +18,13 @@ const CompletedTodo = () => {
                         ?
                         <div>
                             <h5 className="display-3 text-light">
-                                You have completed <span className="font-gd">{completedtodos.length}</span> task out of <span>{alltodos.length}</span>
+                                You have completed {completedtodos.length} task out of {alltodos.length}
                             </h5>
                         </div>
                         :
                         <div>
                             <h5 className="display-3 text-light">
-                                You have completed <span className="font-gd">{completedtodos.length}</span> tasks out of <span>{alltodos.length}</span>
+                                You have completed {completedtodos.length} tasks out of {alltodos.length}
                             </h5>
                         </div>
                     }

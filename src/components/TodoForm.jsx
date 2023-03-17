@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import TodoItem from './TodoItem';
 import { useSelector, useDispatch } from 'react-redux';
-import { getTodosAsync } from '../redux/slice';
 import { PatchCheck } from 'react-bootstrap-icons';
+import { getTodosAsync } from '../redux/slice';
+import TodoItem from './TodoItem';
 
 const TodoForm = () => {
     const dispatch = useDispatch();

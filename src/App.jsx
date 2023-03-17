@@ -5,7 +5,7 @@ import TodoForm from "./components/TodoForm";
 
 const App = () => {
   return (
-    <div className="d-grid gap-4 mx-5 my-5">
+<div className="d-grid gap-3 my-5 mx-sm-5 px-sm-5">
       <AddTodo />
       <TodoForm />
       <CompletedTodo />

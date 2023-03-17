@@ -11,7 +11,7 @@ const AddTodo = () => {
     const [state, setState] = useState({});
     const dispatch = useDispatch();
 
-    const notify = () => toast.info("Please write something");
+    const notify = () => toast.warning("Please write something");
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -25,12 +25,13 @@ const AddTodo = () => {
     };
 
     return (
-        <div className="container">
+        <div className="container px-sm-5 ">
 
             <h6 className="display-2 text-light text-center">What needs to be done?</h6>
             <br />
             <form onSubmit={onSubmit}>
-                <div className="input-group ">
+                <div className="input-group">
+
                     <input
                         type="text"
                         className="form-control py-3 bg-secondary"
@@ -38,12 +39,14 @@ const AddTodo = () => {
                         value={value}
                         onChange={(event) => setValue(event.target.value)}
                     />
-                    <button className="btn btn-primary border-0 px-4" type="submit">
-                        <span className="display-4 fw-bold text-light d-flex align-items-center">
-                            Add <Clipboard2PlusFill className="ms-2" />
-                        </span>
+                    <button className="btn btn-primary border-1 border-secondary px-sm-4" type="submit">
+                        <div className="display-4 fw-bold text-light d-flex align-items-center">
+                            <span className='d-none d-sm-flex'>Add</span>
+                            <Clipboard2PlusFill className="ms-sm-2" />
+                        </div>
                     </button>
                 </div>
+
                 {/* <button onClick={notify}>Notify!</button> */}
                 <ToastContainer
                     position="top-center"

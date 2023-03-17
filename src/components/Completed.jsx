@@ -9,7 +9,7 @@ const CompletedTodo = () => {
     );
 
     return (
-        <div className="container">
+        <div className="container px-sm-5">
             {alltodos.length === 0
                 ? null
                 :

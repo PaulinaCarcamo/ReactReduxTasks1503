@@ -2,10 +2,7 @@ import React, { useEffect } from 'react';
 import TodoItem from './TodoItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTodosAsync } from '../redux/slice';
-import { Check2Circle, ListCheck } from 'react-bootstrap-icons';
-// import { images } from '../assets/images';
-
-// const welldone = images[0].img
+import { PatchCheck } from 'react-bootstrap-icons';
 
 const TodoForm = () => {
     const dispatch = useDispatch();
@@ -16,13 +13,14 @@ const TodoForm = () => {
     }, [dispatch]);
 
     return (
-        <div className="container">
+        <div className="container px-sm-5">
 
             {todos.length === 0
                 ?
                 <div>
-                    <h5 className="text-light">All done! <Check2Circle /> </h5>
-                    {/* <img src={welldone} height="200"></img> */}
+                    <h5 className="text-light d-flex align-items-center display-3 justify-content-center">
+                        All done!
+                        <PatchCheck className="mx-2" /> </h5>
                 </div>
                 :
                 <ul className="list-group">

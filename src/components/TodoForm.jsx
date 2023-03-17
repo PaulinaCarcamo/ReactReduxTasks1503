@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { PatchCheck } from 'react-bootstrap-icons';
+// import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { ChatDots } from 'react-bootstrap-icons';
 // import { getTodosAsync } from '../redux/slice';
 import TodoItem from './TodoItem';
 
 const TodoForm = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const todos = useSelector((state) => state.todos);
 
     // useEffect(() => {
@@ -19,8 +19,8 @@ const TodoForm = () => {
                 ?
                 <div>
                     <h5 className="text-light d-flex align-items-center display-3 justify-content-center">
-                        All done!
-                        <PatchCheck className="mx-2" />
+                        {/* All done! <PatchCheck className="mx-2" /> */}
+                        Nothing to do today <ChatDots className="mx-2"/>
                     </h5>
                 </div>
                 :

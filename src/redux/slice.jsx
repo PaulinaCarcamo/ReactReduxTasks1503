@@ -1,4 +1,5 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+// import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 // export const getTodosAsync = createAsyncThunk(
 //     'todos/getTodosAsync',
@@ -8,6 +9,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 //         if (resp.ok) {
 //             const todos = await resp.json();
 //             const limitTodos = todos.todos;
+//             console.log(limitTodos);
 //             return { limitTodos };
 //             // return { todos };
 //         }
@@ -33,7 +35,8 @@ export const todoSlice = createSlice({
         },
         deleteTodo: (state, action) => {
             return state.filter((todo) => todo.id !== action.payload.id);
-        },
+        },   
+
     },
     // extraReducers:  {
     //     [getTodosAsync.fulfilled]: (state, action) => {
@@ -41,6 +44,7 @@ export const todoSlice = createSlice({
     //         return action.payload.limitTodos;
     //     },
     // },
+      
 });
 
 export const { addTodo, toggleComplete, deleteTodo } = todoSlice.actions;

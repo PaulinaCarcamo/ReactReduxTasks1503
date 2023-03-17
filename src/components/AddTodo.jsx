@@ -25,8 +25,8 @@ const AddTodo = () => {
 
     return (
         <div className="container px-sm-5">
-
-            <h6 className="display-2 text-light text-center">What needs to be done?</h6>
+            <h6 className="display-2 text-light d-none d-md-flex justify-content-center">What needs to be done?</h6>
+            <h6 className="display-2 text-light text-center border border-1 rounded py-3 d-md-none">What needs to be done?</h6>
             <br />
             <form onSubmit={onSubmit}>
                 <div className="input-group">
